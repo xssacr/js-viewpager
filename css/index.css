@@ -1,0 +1,113 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+li {
+  list-style: none;
+}
+#box {
+  width: 600px;
+  height: 400px;
+  background: deeppink;
+  margin: 100px auto;
+  overflow: hidden;
+  position: relative;
+}
+#box .item {
+  width: 3100px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#box .item li {
+  float: left;
+  width: 600px;
+  height: 100%;
+  text-align: center;
+  font-size: 40px;
+  color: white;
+}
+#box .item li:nth-child(1) {
+  background-color: #29bb9c;
+}
+#box .item li:nth-child(2) {
+  background-color: #3a99d8;
+}
+#box .item li:nth-child(3) {
+  background-color: #9a5cb4;
+}
+#box .item li:nth-child(4) {
+  background-color: #34495d;
+}
+#box .item li:nth-child(5) {
+  background-color: #e44d42;
+}
+#box .dot {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 40px;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+}
+#box .dot li {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+#box .dot li.active {
+  position: relative;
+  top: 3px;
+  width: 12px;
+  height: 12px;
+  background-color: white;
+}
+#box .prev {
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  transition: 0.5s left, 0.5s right, 1s background-color;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  left: -50px;
+}
+#box .prev:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+#box .next {
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  transition: 0.5s left, 0.5s right, 1s background-color;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  right: -50px;
+}
+#box .next:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+#box:hover .prev {
+  left: 0;
+}
+#box:hover .next {
+  right: 0;
+}

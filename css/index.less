@@ -1,0 +1,123 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+li {
+    list-style: none;
+}
+
+.prev-next() {
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    transition: .5s left, .5s right, 1s background-color;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+}
+
+#box {
+    width: 600px;
+    height: 400px;
+    background: deeppink;
+    margin: 100px auto;
+    overflow: hidden;
+    position: relative;
+
+    .item {
+        width: 3100px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        li {
+            float: left;
+            width: 600px;
+            height: 100%;
+            text-align: center;
+            font-size: 40px;
+            color: white;
+
+            &:nth-child(1) {
+                background-color: #29bb9c;
+            }
+
+            &:nth-child(2) {
+                background-color: #3a99d8;
+            }
+
+            &:nth-child(3) {
+                background-color: #9a5cb4;
+            }
+
+            &:nth-child(4) {
+                background-color: #34495d;
+            }
+
+            &:nth-child(5) {
+                background-color: #e44d42;
+            }
+        }
+    }
+
+    .dot {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 40px;
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
+
+        li {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, .5);
+
+            &.active {
+                position: relative;
+                top: 3px;
+                width: 12px;
+                height: 12px;
+                background-color: white;
+            }
+        }
+
+    }
+
+    .prev {
+        .prev-next();
+        left: -50px;
+    }
+
+    .next {
+        .prev-next();
+        right: -50px;
+    }
+
+    &:hover .prev {
+        left: 0;
+    }
+
+    &:hover .next {
+        right: 0;
+    }
+}
